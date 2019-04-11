@@ -26,7 +26,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -51,7 +58,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -76,7 +90,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -101,7 +122,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -126,7 +154,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -151,7 +186,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -176,7 +218,14 @@
             }" cdkDrag>
         <mat-card-header>
           <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-title>
+            {{character.name}}
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+            <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          </mat-card-title>
           <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content *ngIf="!collapsed">
@@ -202,7 +251,14 @@
             }" cdkDrag>
     <mat-card-header>
       <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-      <mat-card-title>{{character.name}}</mat-card-title>
+      <mat-card-title>
+        {{character.name}}
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+      </mat-card-title>
       <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="!collapsed">
@@ -226,7 +282,14 @@
             }" cdkDrag>
     <mat-card-header>
       <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
-      <mat-card-title>{{character.order}}-{{character.name}}</mat-card-title>
+      <mat-card-title>
+        {{character.order}}-{{character.name}}
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 1" src="./images/targaryen-sigil.png" /> <!--Targaryen-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 2" src="./images/baratheon-sigil.png" /> <!--Baratheon-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
+        <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+      </mat-card-title>
       <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content *ngIf="!collapsed">
