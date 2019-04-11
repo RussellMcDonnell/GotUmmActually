@@ -1,0 +1,243 @@
+<div>
+  <h1>When Did They Die</h1>
+  <div>
+    <button mat-raised-button color="primary" (click)="endGame()" *ngIf="difficulty != 0 && !gameOver">Submit</button>
+  </div>
+  <h1 *ngIf="gameOver">Score: {{gameResult.score}}</h1>
+</div>
+
+<div *ngIf="difficulty == 0" class="selecting-difficulty-box">
+  <button mat-raised-button (click)="startGame(1)">Easy</button>
+  <button mat-raised-button color="primary" (click)="startGame(2)">Medium</button>
+  <button mat-raised-button color="warn" (click)="startGame(3)">Hard</button>
+</div>
+
+<mat-tab-group *ngIf="difficulty == 3 && !gameOver">
+  <mat-tab label="Season 1">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop1($event, season1Characters)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season1Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 2">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop2($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season2Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 3">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop3($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season3Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 4">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season4Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 5">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season5Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 6">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season6Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Season 7">
+    <div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="difficulty != 0">
+      <mat-card *ngFor="let character of season7Characters"
+                [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+        <mat-card-header>
+          <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+          <mat-card-title>{{character.name}}</mat-card-title>
+          <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed">
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+            <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="gameOver || difficulty != 0 && difficulty != 3">
+  <mat-card *ngFor="let character of characters"
+            [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+    <mat-card-header>
+      <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+      <mat-card-title>{{character.name}}</mat-card-title>
+      <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="!collapsed">
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+        <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+      </mat-expansion-panel>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="gameOver">
+  <mat-card *ngFor="let character of gameResult.correctCharacterOrder"
+            [ngClass]="{
+            'character-card':true,
+            'house-targaryen':character.house == 1,
+            'house-baratheon':character.house == 2,
+            'house-stark':character.house == 3,
+            'house-arryn':character.house == 4,
+            'house-tully':character.house == 5
+            }" cdkDrag>
+    <mat-card-header>
+      <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
+      <mat-card-title>{{character.order}}-{{character.name}}</mat-card-title>
+      <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="!collapsed">
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header style="position: absolute; right: 0px; top: 0px;"></mat-expansion-panel-header>
+        <b>Season: </b>
+        <p>{{character.season}}</p>
+        <b>Episode: </b>
+        <p>{{character.episode}}</p>
+        <img mat-card-image src="{{character.imageUrl}}" alt="Photo of {{character.name}}">
+      </mat-expansion-panel>
+    </mat-card-content>
+  </mat-card>
+</div>
