@@ -10,6 +10,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { WhereAreWeComponent } from './where-are-we/where-are-we.component';
 import { WhenDidTheyDieComponent } from './when-did-they-die/when-did-they-die.component';
+import { CharacterListComponent } from './when-did-they-die/character-list-component';
 
 import { MatButtonModule } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -24,7 +25,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     NavMenuComponent,
     HomeComponent,
     WhereAreWeComponent,
-    WhenDidTheyDieComponent
+    WhenDidTheyDieComponent,
+    CharacterListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
