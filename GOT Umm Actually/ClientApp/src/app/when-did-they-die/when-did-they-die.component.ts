@@ -48,7 +48,7 @@ export class WhenDidTheyDieComponent {
   public startGame(selectedDifficulty: number) {
     this.difficulty = selectedDifficulty;
     this.http.get<Character[]>('api/Characters/GetDeadCharactersShuffled/' + selectedDifficulty).subscribe(result => {
-      if (this.difficulty === 3) {
+      if (this.difficulty > 1) {
         for (let character of result) {
           if (character.season === 1) {
             this.season1Characters.push(character);
@@ -73,7 +73,7 @@ export class WhenDidTheyDieComponent {
   }
 
   public endGame() {
-    if (this.difficulty === 3) {
+    if (this.difficulty > 1) {
       this.characters = this.season1Characters.concat(this.season2Characters,this.season3Characters,this.season4Characters,this.season5Characters,this.season6Characters,this.season7Characters);
     }
 

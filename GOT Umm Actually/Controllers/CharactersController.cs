@@ -135,7 +135,10 @@ namespace GOT_Umm_Actually.Controllers
         [HttpGet("[action]/{difficulty}")]
         public List<Character> GetDeadCharactersShuffled([FromRoute] DifficultyEnum difficulty)
         {
-            return GetCharacterList(difficulty).OrderBy(c => c.Season).ThenBy(_ => Guid.NewGuid()).ToList();
+            if(difficulty == DifficultyEnum.Easy)
+                return GetCharacterList(difficulty).OrderBy(_ => Guid.NewGuid()).ToList();
+            else
+                return GetCharacterList(difficulty).OrderBy(c => c.Season).ThenBy(_ => Guid.NewGuid()).ToList();
         }
 
         [HttpPost("[action]/{difficulty}")]

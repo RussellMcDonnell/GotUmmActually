@@ -76,3 +76,17 @@
 .house-targaryen mat-card-title {
   color: white;
 }
+
+.episode-break {
+  font-family: "got-font";
+}
+
+.title {
+  font-family: "got-font";
+  text-align: center;
+}
+
+@font-face {
+  font-family: "got-font";
+  src: url('/fonts/Game of Thrones.ttf') format('truetype');
+}

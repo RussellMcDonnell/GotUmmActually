@@ -1,5 +1,5 @@
 <div>
-  <h1>When Did They Die</h1>
+  <h1 class="title">When Did They Die</h1>
   <div>
     <button mat-raised-button color="primary" (click)="endGame()" *ngIf="difficulty != 0 && !gameOver">Submit</button>
   </div>
@@ -12,7 +12,7 @@
   <button mat-raised-button color="warn" (click)="startGame(3)">Hard</button>
 </div>
 
-<mat-tab-group *ngIf="difficulty == 3 && !gameOver">
+<mat-tab-group *ngIf="difficulty > 1 && !gameOver">
   <mat-tab label="Season 1">
     <character-list-component [characters]="season1Characters"></character-list-component>
   </mat-tab>
@@ -36,5 +36,5 @@
   </mat-tab>
 </mat-tab-group>
 
-<character-list-component [characters]="characters" *ngIf="gameOver || difficulty != 0 && difficulty != 3"></character-list-component>
+<character-list-component [characters]="characters" *ngIf="gameOver || difficulty == 1"></character-list-component>
 <character-list-component [characters]="gameResult.correctCharacterOrder" [showAdditionalInfo]="gameOver" *ngIf="gameOver"></character-list-component>
