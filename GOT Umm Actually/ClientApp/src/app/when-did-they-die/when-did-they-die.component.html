@@ -12,6 +12,19 @@
   <button mat-raised-button color="warn" (click)="startGame(3)">Hard</button>
 </div>
 
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name">
+  </mat-form-field>
+</form>
+
+<div class="switch-button-box">
+  <span class="active-test" [ngStyle]="{'left': difficulty === 1 ? '0%' : difficulty === 2 ? '33.3%' : '66.6%'}"></span>
+  <button [ngClass]="{'switch-button-case':true, active:difficulty===1}" (click)="difficulty=1">EASY</button>
+  <button [ngClass]="{'switch-button-case':true, active:difficulty===2}" (click)="difficulty=2">MEDIUM</button>
+  <button [ngClass]="{'switch-button-case':true, active:difficulty===3}" (click)="difficulty=3">HARD</button>
+</div>
+
 <mat-tab-group *ngIf="difficulty > 1 && !gameOver">
   <mat-tab label="Season 1">
     <character-list-component [characters]="season1Characters"></character-list-component>
