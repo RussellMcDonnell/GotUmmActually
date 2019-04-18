@@ -1,10 +1,35 @@
-<h1>Counter</h1>
+<!--<h1>Counter</h1>
 
 <p>This is a simple example of an Angular component.</p>
 
 <p>Current count: <strong>{{ currentCount }}</strong></p>
 
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>-->
 
+<h1 class="title">Where are we</h1>
 
-<img src="https://i.redd.it/ap8fmgf1fzcz.jpg"/>
+<ngb-carousel *ngIf="images" [interval]="false">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[1]" alt="Random second slide">
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" alt="Random third slide">
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!--<img src="https://i.redd.it/ap8fmgf1fzcz.jpg"/>-->
