@@ -245,17 +245,3 @@
   text-align: left;
 }
 
-
-figure {
-  width: 250px;
-  height: 250px;
-  background-color: #000;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
