@@ -12,6 +12,7 @@ import { WhereAreWeComponent } from './where-are-we/where-are-we.component';
 import { WhenDidTheyDieComponent } from './when-did-they-die/when-did-they-die.component';
 import { CharacterListComponent } from './when-did-they-die/character-list-component';
 
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
@@ -33,6 +34,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    MatInputModule,
     MatButtonModule,
     DragDropModule,
     MatCardModule,

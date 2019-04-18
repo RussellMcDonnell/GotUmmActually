@@ -21,7 +21,7 @@ export class WhenDidTheyDieComponent {
   private gameOver: boolean;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.difficulty = 0;
+    this.difficulty = 1;
     this.gameOver = false;
     this.season1Characters = [];
     this.season2Characters = [];

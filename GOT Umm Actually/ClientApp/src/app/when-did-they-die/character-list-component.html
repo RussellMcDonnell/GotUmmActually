@@ -1,13 +1,15 @@
 <div cdkDropList class="character-list" (cdkDropListDropped)="drop($event)" *ngIf="difficulty != 0">
   <div *ngFor="let character of characters; index as i">
     <mat-card
-              [ngClass]="{
+      [ngClass]="{
             'character-card':true,
             'house-targaryen':character.house == 1,
             'house-baratheon':character.house == 2,
             'house-stark':character.house == 3,
             'house-arryn':character.house == 4,
-            'house-tully':character.house == 5
+            'house-tully':character.house == 5,
+            'house-lannister':character.house == 6,
+            'house-martell':character.house ==7
             }" cdkDrag>
       <mat-card-header>
         <img mat-card-avatar class="character-image" src="{{character.imageUrl}}" />
@@ -18,6 +20,8 @@
           <img mat-card-avatar class="character-image" *ngIf="character.house == 3" src="./images/stark-sigil.png" /> <!--Stark-->
           <img mat-card-avatar class="character-image" *ngIf="character.house == 4" src="./images/arryn-sigil.png" /> <!--Arryn-->
           <img mat-card-avatar class="character-image" *ngIf="character.house == 5" src="./images/tully-sigil.png" /> <!--Tully-->
+          <img mat-card-avatar class="character-image" *ngIf="character.house == 6" src="./images/lannister-sigil.png" /> <!--Lannister-->
+          <img mat-card-avatar class="character-image" *ngIf="character.house == 7" src="./images/martell-sigil.png" /> <!--Martell-->
         </mat-card-title>
         <mat-card-subtitle>{{character.deathDescription}}</mat-card-subtitle>
       </mat-card-header>
