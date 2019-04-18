@@ -38,6 +38,10 @@
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
+.mat-expansion-panel {
+  background: transparent !important;
+}
+
 .mat-tab-link:hover {
   text-decoration: none !important;
 }
@@ -103,7 +107,7 @@
   text-align: center;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 35%;
   transform: translate3D(-50%, -50%, 0);
   will-change: transform;
   z-index: 197 !important;
@@ -151,4 +155,92 @@
 
 .active {
   color: black;
+}
+
+.start-button {
+  display: inline-block;
+  background: none;
+  width: 200px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate3D(-50%, -50%, 0);
+  background-color: black;
+  color: white;
+  position: absolute;
+  border: none;
+  transition: .3s ease all;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  z-index: 3;
+  padding: 1px;
+}
+
+  .start-button:hover {
+    color: grey;
+    cursor: pointer;
+  }
+
+  .start-button:focus {
+    outline: none;
+  }
+
+.name-input {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.name-box {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate3D(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.submit-button {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  left: 50%;
+  top: 15%;
+  transform: translate3D(-50%, -50%, 0);
+  background-color: black;
+  color: white;
+  position: relative;
+  border: none;
+  transition: .3s ease all;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding: 1px;
+}
+
+  .submit-button:hover {
+    color: grey;
+    cursor: pointer;
+  }
+
+  .submit-button:focus {
+    outline: none;
+  }
+
+.mat-tab-label {
+  min-width: 158.5px !important;
+  padding: 3px !important;
+}
+
+.character-container {
+  text-align: center;
+}
+
+.mat-card-subtitle{
+  text-align:left;
+}
+
+.mat-card-title{
+  text-align: left;
 }

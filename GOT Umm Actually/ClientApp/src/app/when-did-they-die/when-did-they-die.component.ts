@@ -18,11 +18,11 @@ export class WhenDidTheyDieComponent {
 
   public gameResult: GameResult;
   private difficulty: number;
-  private gameOver: boolean;
+  private gameState: GameState;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.difficulty = 1;
-    this.gameOver = false;
+    this.gameState = GameState.begining;
     this.season1Characters = [];
     this.season2Characters = [];
     this.season3Characters = [];
@@ -47,6 +47,7 @@ export class WhenDidTheyDieComponent {
 
   public startGame(selectedDifficulty: number) {
     this.difficulty = selectedDifficulty;
+    this.gameState = GameState.started;
     this.http.get<Character[]>('api/Characters/GetDeadCharactersShuffled/' + selectedDifficulty).subscribe(result => {
       if (this.difficulty > 1) {
         for (let character of result) {
@@ -79,7 +80,7 @@ export class WhenDidTheyDieComponent {
 
     this.http.post<GameResult>('api/Characters/CheckAnswers/' + this.difficulty, this.characters).subscribe(result => {
       this.gameResult = result;
-      this.gameOver = true;
+      this.gameState = GameState.gameOver;
     }, error => console.error(error));
   }
 }
@@ -96,4 +97,11 @@ interface Character {
 interface GameResult {
   score: number;
   correctCharacterOrder: Character[];
+}
+
+
+enum GameState {
+  begining = 0,
+  started = 1,
+  gameOver = 2
 }

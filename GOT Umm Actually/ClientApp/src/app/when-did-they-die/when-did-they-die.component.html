@@ -1,9 +1,9 @@
 <div>
   <h1 class="title">When Did They Die</h1>
-  <div>
-    <button mat-raised-button color="primary" (click)="endGame()" *ngIf="difficulty != 0 && !gameOver">Submit</button>
+  <div class="character-container">
+    <button class="submit-button" (click)="endGame()" *ngIf="gameState == 1">Submit</button>
+    <h1 *ngIf="gameState == 2">Score: {{gameResult.score}}</h1>
   </div>
-  <h1 *ngIf="gameOver">Score: {{gameResult.score}}</h1>
 </div>
 
 <div *ngIf="difficulty == 0" class="selecting-difficulty-box">
@@ -12,42 +12,60 @@
   <button mat-raised-button color="warn" (click)="startGame(3)">Hard</button>
 </div>
 
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name">
-  </mat-form-field>
-</form>
-
-<div class="switch-button-box">
-  <span class="active-test" [ngStyle]="{'left': difficulty === 1 ? '0%' : difficulty === 2 ? '33.3%' : '66.6%'}"></span>
-  <button [ngClass]="{'switch-button-case':true, active:difficulty===1}" (click)="difficulty=1">EASY</button>
-  <button [ngClass]="{'switch-button-case':true, active:difficulty===2}" (click)="difficulty=2">MEDIUM</button>
-  <button [ngClass]="{'switch-button-case':true, active:difficulty===3}" (click)="difficulty=3">HARD</button>
+<div *ngIf="gameState == 0">
+  <div class="name-box">
+    <mat-form-field class="name-input">
+      <input matInput placeholder="Name">
+    </mat-form-field>
+  </div>
+  <div class="switch-button-box">
+    <span class="active-test" [ngStyle]="{'left': difficulty === 1 ? '0%' : difficulty === 2 ? '33.3%' : '66.6%'}"></span>
+    <button [ngClass]="{'switch-button-case':true, active:difficulty===1}" (click)="difficulty=1">EASY</button>
+    <button [ngClass]="{'switch-button-case':true, active:difficulty===2}" (click)="difficulty=2">MEDIUM</button>
+    <button [ngClass]="{'switch-button-case':true, active:difficulty===3}" (click)="difficulty=3">HARD</button>
+  </div>
+  <button class="start-button" (click)="startGame(difficulty)">Start</button>
 </div>
 
-<mat-tab-group *ngIf="difficulty > 1 && !gameOver">
+<mat-tab-group *ngIf="gameState == 1 && difficulty > 1">
   <mat-tab label="Season 1">
-    <character-list-component [characters]="season1Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season1Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 2">
-    <character-list-component [characters]="season2Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season2Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 3">
-    <character-list-component [characters]="season3Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season3Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 4">
-    <character-list-component [characters]="season4Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season4Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 5">
-    <character-list-component [characters]="season5Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season5Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 6">
-    <character-list-component [characters]="season6Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season6Characters"></character-list-component>
+    </div>
   </mat-tab>
   <mat-tab label="Season 7">
-    <character-list-component [characters]="season7Characters"></character-list-component>
+    <div class="character-container">
+      <character-list-component [characters]="season7Characters"></character-list-component>
+    </div>
   </mat-tab>
 </mat-tab-group>
 
-<character-list-component [characters]="characters" *ngIf="gameOver || difficulty == 1"></character-list-component>
-<character-list-component [characters]="gameResult.correctCharacterOrder" [showAdditionalInfo]="gameOver" *ngIf="gameOver"></character-list-component>
+<div class="character-container">
+  <character-list-component [characters]="characters" *ngIf="gameState == 2 || (difficulty == 1 && gameState == 1)"></character-list-component>
+  <character-list-component [characters]="gameResult.correctCharacterOrder" [showAdditionalInfo]="gameState == 2" *ngIf="gameState == 2"></character-list-component>
+</div>
