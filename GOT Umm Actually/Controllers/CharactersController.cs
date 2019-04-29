@@ -211,7 +211,19 @@ namespace GOT_Umm_Actually.Controllers
             new Character { Importance = Character.ImportanceEnum.Minor, Season = 6, Episode = "10 - The Winds of Winter", Name = "Walder Rivers", DeathDescription = "Killed by Arya Stark", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/f/fb/Bastard_Walder.png/revision/latest?cb=20160826005256" },
             new Character { Importance = Character.ImportanceEnum.Minor, Season = 6, Episode = "10 - The Winds of Winter", Name = "Lothar Frey", House = HouseEnum.Frey, DeathDescription = "Killed by Arya Stark", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/Lothar-Frey-S6.jpg/revision/latest?cb=20160613143151" },
             new Character { Importance = Character.ImportanceEnum.Recurring, Season = 6, Episode = "10 - The Winds of Winter", Name = "Walder Frey", House = HouseEnum.Frey, DeathDescription = "Killed by Arya Stark", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
-            //Season 7
+            //Season 7 //TODO images for all season 7 characters
+            new Character { Importance = Character.ImportanceEnum.Minor, Season = 7, Episode = "1 - Dragonstone", Name = "Sally", DeathDescription = "Killed by her father with a dagger in a mercy killing due to starvation", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Minor, Season = 7, Episode = "1 - Dragonstone", Name = "Sally's Father", DeathDescription = "Stabbed himself with a dagger due to starvation", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "2 - Stormborn", Name = "Obara Sand", DeathDescription = "Impaled through the stomach by Euron Greyjoy with her own spear", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "2 - Stormborn", Name = "Nymeria Sand", DeathDescription = "Strangled with her own wip by Euron Greyjoy", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "3 - The Queen's Justice", Name = "Tyene Sand", DeathDescription = "Poisonded by the Cersei with Longfarewell, same way Ellaria had poisoned Myrcella", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Major, Season = 7, Episode = "3 - The Queen's Justice", Name = "Olenna Tyrell", House = HouseEnum.Tyrell, DeathDescription = "Drank poison provided by Jamie Lannister", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "5 - Eastwatch", Name = "Randyll Tarly", House = HouseEnum.Tarly, DeathDescription = "Burned alive by Drogon", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "5 - Eastwatch", Name = "Dickon Tarly", House = HouseEnum.Tarly, DeathDescription = "Burned alive by Drogon", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "6 - Beyond the Wall", Name = "Thoros of Myr", DeathDescription = "Died from a combination of wounds and frostbite", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Major, Season = 7, Episode = "6 - Beyond the Wall", Name = "Viserion", House = HouseEnum.Targaryen, DeathDescription = "Speared through the neck by the Night King", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Recurring, Season = 7, Episode = "6 - Beyond the Wall", Name = "Benjen Stark", House = HouseEnum.Stark, DeathDescription = "Torn apart by Wights, after sacrificing himself to save Jon", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
+            new Character { Importance = Character.ImportanceEnum.Major, Season = 7, Episode = "7 - The Dragon and the Wolf", Name = "Petyr Baelish", House = HouseEnum.Stark, DeathDescription = "Throat sliced open by Arya Stark", ImageUrl = "https://vignette.wikia.nocookie.net/gameofthrones/images/e/e4/S06E06_-_Walder_Frey_Cropped_new.jpg/revision/latest?cb=20161215025257" },
         };
 
         [HttpGet("[action]/{difficulty}")]
@@ -307,7 +319,9 @@ namespace GOT_Umm_Actually.Controllers
             Bolton = 8, //TODO
             Greyjoy = 9, //TODO
             Tyrell = 10, //TODO
-            Frey = 11 //TODO
+            Frey = 11, //TODO
+            Tarly = 12, //TODO
+            Baelish = 13 //TODO
         }
     }
 }
