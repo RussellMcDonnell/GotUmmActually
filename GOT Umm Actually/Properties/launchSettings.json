@@ -11,6 +11,7 @@
     "GOT_Umm_Actually": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "http://localhost:53812/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "http://*:53812"
