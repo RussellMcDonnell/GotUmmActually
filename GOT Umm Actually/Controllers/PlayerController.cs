@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Repository;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace GOT_Umm_Actually.Controllers
 {
@@ -23,10 +19,16 @@ namespace GOT_Umm_Actually.Controllers
 
         private ConcurrentDictionary<Guid, Player> Scores { get; set; }
 
-        [HttpGet("[action]")]
-        public List<Player> Index()
+        [HttpGet]
+        public List<Player> GetPlayers()
         {
             return _playerRepository.GetAllPlayers();
+        }
+
+        [HttpPost]
+        public void AddPlayer([FromBody]Player player)
+        {
+            _playerRepository.AddPlayer(player.Name, player.Score);
         }
     }
 }

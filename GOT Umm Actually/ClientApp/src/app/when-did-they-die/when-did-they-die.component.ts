@@ -17,6 +17,7 @@ export class WhenDidTheyDieComponent {
   public season7Characters: Character[];
 
   public gameResult: GameResult;
+  private name: string;
   private difficulty: number;
   private gameState: GameState;
 
@@ -55,15 +56,15 @@ export class WhenDidTheyDieComponent {
             this.season1Characters.push(character);
           } else if (character.season === 2) {
             this.season2Characters.push(character);
-          }else if (character.season === 3) {
+          } else if (character.season === 3) {
             this.season3Characters.push(character);
-          }else if (character.season === 4) {
+          } else if (character.season === 4) {
             this.season4Characters.push(character);
-          }else if (character.season === 5) {
+          } else if (character.season === 5) {
             this.season5Characters.push(character);
-          }else if (character.season === 6) {
+          } else if (character.season === 6) {
             this.season6Characters.push(character);
-          }else if (character.season === 7) {
+          } else if (character.season === 7) {
             this.season7Characters.push(character);
           }
         }
@@ -75,11 +76,12 @@ export class WhenDidTheyDieComponent {
 
   public endGame() {
     if (this.difficulty > 1) {
-      this.characters = this.season1Characters.concat(this.season2Characters,this.season3Characters,this.season4Characters,this.season5Characters,this.season6Characters,this.season7Characters);
+      this.characters = this.season1Characters.concat(this.season2Characters, this.season3Characters, this.season4Characters, this.season5Characters, this.season6Characters, this.season7Characters);
     }
 
     this.http.post<GameResult>('api/Characters/CheckAnswers/' + this.difficulty, this.characters).subscribe(result => {
       this.gameResult = result;
+      this.http.post('api/player', { name: this.name, score: result.score }).subscribe(result => { }, error => console.error(error));
       this.gameState = GameState.gameOver;
     }, error => console.error(error));
   }

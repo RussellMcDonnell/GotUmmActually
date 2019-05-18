@@ -78,10 +78,41 @@
   background-image: linear-gradient(to right, rgb(238,134,67), white);
 }
 
+.house-bolton {
+  background-image: linear-gradient(to right, black, white);
+}
+
+.house-greyjoy {
+  background-image: linear-gradient(to right, rgb(26,26,26), white);
+}
+
+.house-tyrell {
+  background-image: linear-gradient(to right, rgb(141,159,129), white);
+}
+
+.house-frey {
+  background-image: linear-gradient(to right, rgb(125,125,125), white);
+}
+
+.house-tarly {
+  background-image: linear-gradient(to right, rgb(0,66,32), white);
+}
+
+.house-baelish {
+  background-image: linear-gradient(to right, rgb(90,163,81), white);
+}
+
 .house-targaryen b,
 .house-targaryen p,
 .house-targaryen mat-card-subtitle,
 .house-targaryen mat-card-title {
+  color: white;
+}
+
+.house-bolton b,
+.house-bolton p,
+.house-bolton mat-card-subtitle,
+.house-bolton mat-card-title {
   color: white;
 }
 
@@ -206,9 +237,7 @@
   margin-top: 20px;
   width: 200px;
   height: 40px;
-  left: 50%;
   top: 15%;
-  transform: translate3D(-50%, -50%, 0);
   background-color: black;
   color: white;
   position: relative;

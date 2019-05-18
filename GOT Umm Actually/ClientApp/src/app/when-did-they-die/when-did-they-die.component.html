@@ -15,7 +15,7 @@
 <div *ngIf="gameState == 0">
   <div class="name-box">
     <mat-form-field class="name-input">
-      <input matInput placeholder="Name">
+      <input matInput placeholder="Name" [(ngModel)]="name" required>
     </mat-form-field>
   </div>
   <div class="switch-button-box">
@@ -24,7 +24,7 @@
     <button [ngClass]="{'switch-button-case':true, active:difficulty===2}" (click)="difficulty=2">MEDIUM</button>
     <button [ngClass]="{'switch-button-case':true, active:difficulty===3}" (click)="difficulty=3">HARD</button>
   </div>
-  <button class="start-button" (click)="startGame(difficulty)">Start</button>
+  <button class="start-button" (click)="startGame(difficulty)" [disabled]="!name">Start</button>
 </div>
 
 <mat-tab-group *ngIf="gameState == 1 && difficulty > 1">
