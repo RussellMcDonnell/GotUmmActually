@@ -121,6 +121,7 @@
 }
 
 .title {
+  margin-top:20px;
   font-family: "got-font";
   text-align: center;
 }
@@ -274,3 +275,10 @@
   text-align: left;
 }
 
+table{
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}

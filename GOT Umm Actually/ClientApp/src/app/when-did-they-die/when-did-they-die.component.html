@@ -2,7 +2,6 @@
   <h1 class="title">When Did They Die</h1>
   <div class="character-container">
     <button class="submit-button" (click)="endGame()" *ngIf="gameState == 1">Submit</button>
-    <h1 *ngIf="gameState == 2">Score: {{gameResult.score}}</h1>
   </div>
 </div>
 
@@ -65,7 +64,38 @@
   </mat-tab>
 </mat-tab-group>
 
-<div class="character-container">
+<div class="character-container" *ngIf="difficulty == 1 && gameState == 1">
   <character-list-component [characters]="characters" *ngIf="gameState == 2 || (difficulty == 1 && gameState == 1)"></character-list-component>
-  <character-list-component [characters]="gameResult.correctCharacterOrder" [showAdditionalInfo]="gameState == 2" *ngIf="gameState == 2"></character-list-component>
 </div>
+
+<mat-tab-group *ngIf="gameState == 2">
+  <mat-tab label="Results">
+    <div class="character-container">
+      <h1>Score: {{gameResult.score}}</h1>
+    </div>
+    <div class="character-container">
+      <character-list-component [characters]="characters"></character-list-component>
+      <character-list-component [characters]="gameResult.correctCharacterOrder" [showAdditionalInfo]="gameState == 2"></character-list-component>
+    </div>
+  </mat-tab>
+  <mat-tab label="Leaderboard">
+    <h3 class="title">Leaderboard</h3>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <tbody *ngFor="let player of leaderboard; index as i">
+        <tr>
+          <td>{{i + 1}}</td>
+          <td>{{player.name}}</td>
+          <td>{{player.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="character-container">
+      <button class="submit-button" (click)="refreshLeaderboard()">Refresh</button>
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -4,6 +4,7 @@ using Repository;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GOT_Umm_Actually.Controllers
 {
@@ -22,7 +23,7 @@ namespace GOT_Umm_Actually.Controllers
         [HttpGet]
         public List<Player> GetPlayers()
         {
-            return _playerRepository.GetAllPlayers();
+            return _playerRepository.GetAllPlayers().OrderByDescending(x => x.Score).ToList();
         }
 
         [HttpPost]

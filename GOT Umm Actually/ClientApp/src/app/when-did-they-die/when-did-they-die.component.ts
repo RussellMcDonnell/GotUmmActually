@@ -15,6 +15,7 @@ export class WhenDidTheyDieComponent {
   public season5Characters: Character[];
   public season6Characters: Character[];
   public season7Characters: Character[];
+  public leaderboard: Player[];
 
   public gameResult: GameResult;
   private name: string;
@@ -74,6 +75,12 @@ export class WhenDidTheyDieComponent {
     }, error => console.error(error));
   }
 
+  public refreshLeaderboard() {
+    this.http.get<Player[]>('api/player').subscribe(result => {
+      this.leaderboard = result;
+    })
+  }
+
   public endGame() {
     if (this.difficulty > 1) {
       this.characters = this.season1Characters.concat(this.season2Characters, this.season3Characters, this.season4Characters, this.season5Characters, this.season6Characters, this.season7Characters);
@@ -81,7 +88,11 @@ export class WhenDidTheyDieComponent {
 
     this.http.post<GameResult>('api/Characters/CheckAnswers/' + this.difficulty, this.characters).subscribe(result => {
       this.gameResult = result;
-      this.http.post('api/player', { name: this.name, score: result.score }).subscribe(result => { }, error => console.error(error));
+      this.http.post('api/player', { name: this.name, score: result.score }).subscribe(result => {
+        this.http.get<Player[]>('api/player').subscribe(result => {
+          this.leaderboard = result;
+        })
+      }, error => console.error(error));
       this.gameState = GameState.gameOver;
     }, error => console.error(error));
   }
@@ -99,6 +110,11 @@ interface Character {
 interface GameResult {
   score: number;
   correctCharacterOrder: Character[];
+}
+
+interface Player {
+  name: string;
+  score: number;
 }
 
 
